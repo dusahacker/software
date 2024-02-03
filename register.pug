@@ -1,0 +1,62 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title Registration Form
+  style.
+    body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    text-align: center;
+    margin-top: 50px;
+    }
+    form {
+    max-width: 400px;
+    margin: 0 auto;
+    }
+    input, select {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    }
+    input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+    }
+h2 Register
+form(action='/register' method='post')
+  // Full Name Input
+  label(for='fullName') Full Name:
+  input#fullName(type='text' name='fullName' required='')
+  br
+  // Registration Number Input
+  label(for='studentID') studentID:
+  input#studentID(type='text' name='studentID' pattern='\d{13}' title='Enter a 13-digit registration number' required='')
+  br
+  // Email Input
+  label(for='email') Email:
+  input#email(type='email' name='email' required='')
+  br
+  // Password Input
+  label(for='password') Password:
+  input#password(type='password' name='password' required='')
+  br
+  // Confirm Password Input
+  label(for='confirmPassword') Confirm Password:
+  input#confirmPassword(type='password' name='confirmPassword' required='')
+  br
+  // Department Dropdown
+  label(for='department') Department:
+  select#department(name='department' required='')
+    option(value='' disabled='' selected='') Select your department
+    option(value='IT') Computer Department
+    option(value='EE') Electrical Department
+    option(value='center') Civil Department
+    option(value='ME') Mechanical Department
+    option(value='MIE') Mining Department
+    // Add more options as needed
+  br
+  // Submit Button
+  input(type='submit' value='Register')
